@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -16,5 +16,16 @@ export class UserService {
 
   login(loginRequest: any): Observable<any> {
     return this.http.post(BASE_URL + 'login', loginRequest);
+  }
+
+  fetchUsername(): Observable<any> {
+    const jwtToken = localStorage.getItem('jwt');
+
+    let headers = new HttpHeaders();
+    headers = headers.set('Authorization', 'Bearer ' + jwtToken);
+
+    return this.http.get(BASE_URL + 'api/user/info', {
+      headers: headers,
+    });
   }
 }
