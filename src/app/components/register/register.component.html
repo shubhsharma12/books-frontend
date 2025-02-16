@@ -3,21 +3,21 @@
   <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
     <!-- First Name Field -->
     <div class="form-group">
-      <label for="firstname">First name</label>
+      <label for="firstName">First name</label>
       <input
         type="text"
         class="form-control"
-        id="firstname"
-        formControlName="firstname"
+        id="firstName"
+        formControlName="firstName"
       />
       <div
         *ngIf="
-          registerForm.get('firstname')?.touched &&
-          registerForm.get('firstname')?.invalid
+          registerForm.get('firstName')?.touched &&
+          registerForm.get('firstName')?.invalid
         "
         class="text-danger"
       >
-        <small *ngIf="registerForm.get('firstname')?.hasError('required')"
+        <small *ngIf="registerForm.get('firstName')?.hasError('required')"
           >First name is required.</small
         >
       </div>
@@ -25,21 +25,21 @@
 
     <!-- Last Name Field -->
     <div class="form-group">
-      <label for="lastname">Last name</label>
+      <label for="lastName">Last name</label>
       <input
         type="text"
         class="form-control"
-        id="lastname"
-        formControlName="lastname"
+        id="lastName"
+        formControlName="lastName"
       />
       <div
         *ngIf="
-          registerForm.get('lastname')?.touched &&
-          registerForm.get('lastname')?.invalid
+          registerForm.get('lastName')?.touched &&
+          registerForm.get('lastName')?.invalid
         "
         class="text-danger"
       >
-        <small *ngIf="registerForm.get('lastname')?.hasError('required')"
+        <small *ngIf="registerForm.get('lastName')?.hasError('required')"
           >Last name is required.</small
         >
       </div>
